@@ -1,0 +1,175 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - test
+  - bye
+  - thank
+  - python
+  - search_documentation_test
+  - search_documentation_changes
+  - name_entry
+  - testing_types
+  - testing_definitions
+  - one
+  - two
+  - three
+  - four
+  - five
+  - feedbackyes
+  - feedbackno
+  
+  
+
+slots:
+  name:
+    type: text
+  
+  feedback:
+    type: text
+    auto_fill: False
+ 
+
+entities:
+- testing
+- change_request
+- name
+
+
+
+responses:
+  utter_greet:
+  - text: "Please enter your name"
+  
+  
+  utter_rehelp:
+  - text: "Ofcourse, how can I help you?"
+  
+  utter_name_help:
+  - text: "Heya {name}, Hope you're doing good 😄.. How can I help you? " 
+  
+  utter_actionslot:
+  - text: " {name} is the name captured in utteractionslot"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  
+  utter_further_help:
+  - text: "Is there anything I can help you with?"
+  
+  utter_rating:
+  - text: "Please rate the bot on a scale of 1-5 (5 being Max !)"
+    buttons:
+    - title: 1
+      payload: /one
+    - title: 2
+      payload: /two
+    - title: 3
+      payload: /three
+    - title: 4
+      payload: /four
+    - title: 5
+      payload: /five
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_feedbackyn:
+  - text: "Do you want to provide any feedback?"
+    buttons:
+    - title: Yes
+      payload: /feedbackyes
+    - title: No
+      payload: /feedbackno
+      
+
+  utter_goodbye:
+  - text: "Bye! 👋 Have a nice day.."
+  
+  utter_finalbye:
+  - text: "Thanks for providing the valuable Feedback, Bye have a nice day👋"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
+  utter_test:
+  - text: "Test is working perfectly fine"
+  
+  utter_noworries:
+  - text: "I'm pleased to help you 🤩"
+  
+  utter_default:
+  - text: "Sorry! I'm not yet trained to answer that 😥"
+  
+  utter_testingtypes1:
+  - text: "We follow various kinds of testing to ensure flawless quality of data flow such as: "
+  utter_testingtypes2:
+  - text: "1.UAT"
+  utter_testingtypes3:
+  - text: "2.SIT"
+  utter_testingtypes4:
+  - text: "3.OAT"
+  utter_testingtypes5:
+  - text: "Once all the above are successful we proceed with production deployment"
+  
+  utter_rating1:
+  - text: "Sorry, I'm still under development will be improving soon with your valuable feedback"
+  
+  utter_rating2:
+  - text: "Sorry, I'm still under development will be improving soon with your valuable feedback"
+  utter_rating3:
+  - text: "Thanks, will be improving soon"
+
+  utter_rating4:
+  - text: "Thank you so much"
+  utter_rating5:
+  - text: "Woahhh I didn't see that coming.. Thank yo so much !" 
+  utter_feedbackyes:
+  - text: "I would be really helpful.. Please provide your feedback :)"
+  utter_feedbackno:
+  - text: "Bye! 👋 Have a nice day.."
+
+
+  
+  
+actions:
+- utter_noworries
+- utter_greet
+- utter_rating
+- action_python_custom
+- utter_further_help
+- action_searchdoc_test
+- action_searchdoc_changes
+- utter_name_help
+- utter_rehelp
+- action_slot
+- utter_actionslot
+- utter_testingtypes1
+- utter_testingtypes2
+- utter_testingtypes3
+- utter_testingtypes4
+- utter_testingtypes5
+- action_testing_def
+- action_restart
+- utter_finalbye
+- utter_rating1
+- utter_rating2
+- utter_rating3
+- utter_rating4
+- utter_rating5
+- utter_feedbackyes
+- utter_feedbackno
+- utter_feedbackyn
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
